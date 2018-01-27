@@ -10,7 +10,7 @@ import numpy as np
 
 if __name__ == "__main__":
 	df = pd.read_csv('./vehicles.csv')
-	print((df.columns))
+	
 	sns_plot = sns.lmplot(df.columns[0], df.columns[1], data=df, fit_reg=False)
 
 	sns_plot.axes[0,0].set_ylim(0,)
@@ -19,7 +19,7 @@ if __name__ == "__main__":
 	sns_plot.savefig("VehiclesScaterplot.png",bbox_inches='tight')
 	sns_plot.savefig("VehiclesScaterplot.pdf",bbox_inches='tight')
 
-	data = df.values.T[0].astype(int)
+	data = df.values.T[0]
 
 	print("Mean: %f")%(np.mean(data))
 	print("Median: %f")%(np.median(data))
