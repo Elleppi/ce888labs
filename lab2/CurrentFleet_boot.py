@@ -14,7 +14,7 @@ import numpy as np
 def boostrap(statistic_func, iterations, data):
 	samples  = np.random.choice(data,replace = True, size = [iterations, len(data)])
 	#print samples.shape
-	data_mean = data.mean()
+	data_std = data.std()
 	vals = []
 	for sample in samples:
 		sta = statistic_func(sample)
@@ -23,7 +23,7 @@ def boostrap(statistic_func, iterations, data):
 	b = np.array(vals)
 	#print b
 	lower, upper = np.percentile(b, [2.5, 97.5])
-	return data_mean,lower, upper
+	return data_std, lower, upper
 
 
 
@@ -34,14 +34,14 @@ if __name__ == "__main__":
 	data = df.values.T[0]
 	boots = []
 	for i in range(100,100000,1000):
-		boot = boostrap(np.mean, i, data)
-		boots.append([i,boot[0], "mean"])
+		boot = boostrap(np.std, i, data)
+		boots.append([i,boot[0], "std"])
 		boots.append([i,boot[1], "lower"])
 		boots.append([i,boot[2], "upper"])
 
 
 
-	df_boot = pd.DataFrame(boots, columns=['Boostrap Iterations','Mean',"Value"])
+	df_boot = pd.DataFrame(boots, columns=['Boostrap Iterations','STD',"Value"])
 	sns_plot = sns.lmplot(df_boot.columns[0], df_boot.columns[1], data=df_boot, fit_reg=False,  hue="Value")
 
 
