@@ -1,59 +1,27 @@
 # Lab2
 
-## Overleaf
+## Scaterplot
 
-Overleaf is an online latex typesetting system. You will need it to create the project for this module. 
+I created a new python file named "vehicles.py" in which I: 
+* Upload the data from the related csv file;
+* Drop the NaN items from the imported file;
+* Generate a common plot named "vehicles.png" ![scaterplot](./vehicles.png?raw=true) where you can see how the fleets are distributed
+* Generate an histogram named "CurrentFleetHistogram.png" ![histogram](./CurrentFleetHistogram.png?raw=true) , by taking the first column of the data imported, where are displayed the occurrences for each current fleet day by day;
+* Generate an histogram named "NewFleetHistogram.png" ![histogram](./NewFleetHistogram.png?raw=true), by taking the second column of the data imported, where are displayed the occurrences for each new fleet day by day.
 
-Go to [www.overleaf.com](https://www.overleaf.com) and create an account and a new document.
+## Standard Deviation
 
-## Setting up 
-* Do the following from the unix prompt of your VM
-	* Go to the directory you "cloned" the module files last time
-	* Do `git pull origin master' to bring the new files
+I created 2 files named "newFleetSTD.py" and "currentFleetSTD.py" where similarly for each one:
+* Upload the csv file in a df variable;
+* Drop the empty values;
+* (newFleetSTD.py) Load in a variable all the values from the column named "new Fleet" and print Mean, Median, Variance and Standard Deviation for that values;
+* (currentFleetSTD.py) Do the same for the column named "Current Fleet";
 
-* Do the following tasks using your windows share or your unix account in the VM	
-	* Copy the lab files from the module directory into your own github lab directory, in "lab2" folder
-	* Remove everything from the copied README.md
+## Bootstrap
 
-## Histogram and Scaterplot
-
-A business is looking at changing their current vehicle fleet and replacing their vehicles with ones used by their competitors. They are have captured the MPG of some of the cars in both fleets fleets.
-
-
-1. Read the data for the vehicles found in the file `vehicles.csv`
-2. Create histograms and scatterplots for "current fleet" and "proposed fleet" - see `salaries.py` on how to do this
-
-![scaterplot](./scaterplot.png?raw=true)
-
-## Standard deviation comparison via the boostrap
-
-The business analysts come up a super-complicated comparison algorithm that requires the standard deviation bounds to in order to say which fleet is better. 
-
-- [ ] Find the standard deviation of both samples
-
-
-Use the example code for the bootstrap provided in ``bootstrap.py'' to do the following
-- [ ] Find the upper and lower bound of the standard deviation of the current fleet
-- [ ] Do the same with the new fleet
-- [ ] Are the standard deviations comparable? 
-
-## Present the analysis
-
-- [ ] Write a very small text on what you did in your README.md. Include the generated plots as below 
-
-~~~markdown
-
-![logo](./scaterplot.png?raw=true)
-
-
-~~~
-
-- [ ] Write a very small text description of the analysis in overleaf, download the pdf and put in in github alongside the rest of your lab2 
-
-(The data is from a Japanese vs American cars MPG comparison I found online in a stat book - can't find it again though!)
-
-- [ ] Once you are done, save your changes in github
-	* Go inside your lab directory and do 
-      * ``git add -A -v``
-      * ``git commit -m lab2``
-      * ``git push origin master``
+There are 2 files named "CurrentFleet_boot.py" and "NewFleet_boot.py" where similarly:
+* Upload the data from the csv file and drop the empty elements;
+* (CurrentFleet_boot.py) Load in a variable only the values included into the first column;
+* (newFleetSTD.py) do the same by loading only the values included into the second column;
+* Figure out the mean, lower bound and upper bound by applying the bootstrap function implemented equally in both of the file;
+* Plot the result in file called "CurrentFleet_bootstrap.png" ![scaterplot](./CurrentFleet_bootstrap.png?raw=true) and "NewFleet_bootstrap.png" ![scaterplot](./NewFleet_bootstrap.png?raw=true)

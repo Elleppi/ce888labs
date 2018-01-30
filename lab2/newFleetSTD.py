@@ -10,6 +10,7 @@ import numpy as np
 
 if __name__ == "__main__":
 	df = pd.read_csv('./vehicles.csv')
+	df = df.dropna()
 	data = df["New Fleet"]
 
 	print("Mean: %f")%(np.mean(data))
