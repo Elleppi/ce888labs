@@ -5,9 +5,9 @@
 I created a new python file named "vehicles.py" in which I: 
 * Upload the data from the related csv file;
 * Drop the NaN items from the imported file;
-* Generate a common plot named "vehicles.png" ![scaterplot](./vehicles.png?raw=true) where you can see how the fleets are distributed
-* Generate an histogram named "CurrentFleetHistogram.png" ![histogram](./CurrentFleetHistogram.png?raw=true) , by taking the first column of the data imported, where are displayed the occurrences for each current fleet day by day;
-* Generate an histogram named "NewFleetHistogram.png" ![histogram](./NewFleetHistogram.png?raw=true), by taking the second column of the data imported, where are displayed the occurrences for each new fleet day by day.
+* Generate a common plot named "vehicles.png" where you can see how the fleets are distributed ![scaterplot](./vehicles.png?raw=true)
+* Generate an histogram named "CurrentFleetHistogram.png", by taking the first column of the data imported, where are displayed the occurrences for each current fleet day by day;![histogram](./CurrentFleetHistogram.png?raw=true)
+* Generate an histogram named "NewFleetHistogram.png", by taking the second column of the data imported, where are displayed the occurrences for each new fleet day by day. ![histogram](./NewFleetHistogram.png?raw=true)
 
 ## Standard Deviation
 
@@ -24,4 +24,4 @@ There are 2 files named "CurrentFleet_boot.py" and "NewFleet_boot.py" where simi
 * (CurrentFleet_boot.py) Load in a variable only the values included into the first column;
 * (newFleetSTD.py) do the same by loading only the values included into the second column;
 * Figure out the mean, lower bound and upper bound by applying the bootstrap function implemented equally in both of the file;
-* Plot the result in file called "CurrentFleet_bootstrap.png" ![scaterplot](./CurrentFleet_bootstrap.png?raw=true) and "NewFleet_bootstrap.png" ![scaterplot](./NewFleet_bootstrap.png?raw=true)
+* Plot the result in file called "CurrentFleet_bootstrap.png" and "NewFleet_bootstrap.png" ![scaterplot](./CurrentFleet_bootstrap.png?raw=true) ![scaterplot](./NewFleet_bootstrap.png?raw=true)
