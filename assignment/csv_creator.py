@@ -3,7 +3,7 @@ import csv
 import pandas as pd
 
 def csv_headers():
-	with open("whole_dataset.csv", "wb") as csvfile:
+	with open("omniglot_dataset.csv", "wb") as csvfile:
 		w = csv.writer(csvfile, delimiter = ";")
 		w.writerow(["path", "alphabet", "character_number", "image_name"])
 	with open("training_set.csv", "wb") as csvfile:
@@ -18,7 +18,7 @@ def csv_headers():
 
 def csv_create(path, alphabet, character_number, image_name, flag):	
 	if (flag == 0):
-		with open("whole_dataset.csv", "a") as csvfile:
+		with open("omniglot_dataset.csv", "a") as csvfile:
 			w = csv.writer(csvfile, delimiter = ";")
 			w.writerow([path, alphabet, character_number, image_name])
 
