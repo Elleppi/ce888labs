@@ -4,40 +4,40 @@ import pandas as pd
 
 def csv_headers():
 	with open("omniglot_dataset.csv", "wb") as csvfile:
-		w = csv.writer(csvfile, delimiter = ";")
+		w = csv.writer(csvfile)
 		w.writerow(["path", "alphabet", "character_number", "image_name", "char_id"])
 	
 	with open("training_set.csv", "wb") as csvfile:
-		w = csv.writer(csvfile, delimiter = ";")
+		w = csv.writer(csvfile)
 		w.writerow(["path", "alphabet", "character_number", "image_name", "char_id"])
 	
 	with open("test_set.csv", "wb") as csvfile:
-		w = csv.writer(csvfile, delimiter = ";")
+		w = csv.writer(csvfile)
 		w.writerow(["path", "alphabet", "character_number", "image_name", "char_id"])
 	
 	with open("validation_set.csv", "wb") as csvfile:
-		w = csv.writer(csvfile, delimiter = ";")
+		w = csv.writer(csvfile)
 		w.writerow(["path", "alphabet", "character_number", "image_name", "char_id"])	
 
 def csv_create(path, alphabet, character_number, image_name, char_id, flag):	
 	if (flag == 0):
 		with open("omniglot_dataset.csv", "a") as csvfile:
-			w = csv.writer(csvfile, delimiter = ";")
+			w = csv.writer(csvfile)
 			w.writerow([path, alphabet, character_number, image_name, char_id])
     
 	elif (flag == 1):
 		with open("training_set.csv", "a") as csvfile:
-			w = csv.writer(csvfile, delimiter = ";")
+			w = csv.writer(csvfile)
 			w.writerow([path, alphabet, character_number, image_name, char_id])
 	
 	elif (flag == 2):
 		with open("test_set.csv", "a") as csvfile:
-			w = csv.writer(csvfile, delimiter = ";")
+			w = csv.writer(csvfile)
 			w.writerow([path, alphabet, character_number, image_name, char_id])
 	
 	else:
 		with open("validation_set.csv", "a") as csvfile:
-			w = csv.writer(csvfile, delimiter = ";")
+			w = csv.writer(csvfile)
 			w.writerow([path, alphabet, character_number, image_name, char_id])	
 
 def path_parser(l1, l2, l3):
