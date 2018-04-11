@@ -118,7 +118,6 @@ def path_parser(l1, l2, l3):
 	char_count = 0
 	char_full = 0
 	general_count = 0
-	char_id = 0
 
 	for i in range(0, len(l3)):
 		path = l3[i]
@@ -136,8 +135,8 @@ def path_parser(l1, l2, l3):
 				char_count = 1
 				char_full = 0
 				char_temp = character_number
-				char_id = 0
-				csv_create(path, tree[-3], tree[-2], tree[-1], 0, 3)
+				char_id+=1
+				csv_create(path, tree[-3], tree[-2], tree[-1], char_id, 3)
 				general_count += 1
 				print("%d items in test_set" % general_count)
 				general_count = 1				

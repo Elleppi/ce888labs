@@ -30,20 +30,3 @@ y_test = y_test.values
 
 my_tpot = TPOTClassifier(generations=3, verbosity=2, max_eval_time_mins=0.04, population_size=50)
 my_tpot.fit(X_train, y_train)
-
-
-
-
-df_test = pd.read_csv("test_set.csv")
-
-df_test[["alphabet"]] = df_test[["alphabet"]].apply(LabelEncoder().fit_transform)
-df_test[["character_number"]] = df_test[["character_number"]].apply(LabelEncoder().fit_transform)
-
-features = ["alphabet", "character_number"]
-outcome = ["char_id"]
-
-X_test = df_test[features].copy()
-y_test = df_test[outcome].copy()
-
-X_test = X_test.values
-y_test = y_test.values
