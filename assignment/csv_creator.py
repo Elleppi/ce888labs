@@ -77,6 +77,7 @@ def path_parser(l1, l2, l3):
 	char_temp = tree[-2]
 	char_id = 0
 	csv_create(path, tree[-3], tree[-2], tree[-1], 0, 1)
+	char_count += 1
 	
 	for i in range(1, len(l2)):
 		path = l2[i]
@@ -90,8 +91,7 @@ def path_parser(l1, l2, l3):
 				train_alph_count += 1
 				alph_temp = alphabet
 			if(train_alph_count >= training_alphabets):
-				train_alph_full = 1		
-				general_count += 1		
+				train_alph_full = 1								
 				break			
 			if(character_number != char_temp):
 				char_id += 1
@@ -135,9 +135,7 @@ def path_parser(l1, l2, l3):
 				char_count = 1
 				char_full = 0
 				char_temp = character_number
-				char_id+=1
-				csv_create(path, tree[-3], tree[-2], tree[-1], char_id, 3)
-				general_count += 1
+				char_id+=1								
 				print("%d items in test_set" % general_count)
 				general_count = 1				
 				continue

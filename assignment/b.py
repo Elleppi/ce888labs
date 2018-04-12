@@ -30,3 +30,5 @@ y_test = y_test.values
 
 my_tpot = TPOTClassifier(generations=3, verbosity=2, max_eval_time_mins=0.04, population_size=50)
 my_tpot.fit(X_train, y_train)
+
+my_tpot.score(X_test, y_test)
