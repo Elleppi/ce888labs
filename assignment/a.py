@@ -25,30 +25,33 @@ def load_image(path):
     image = np.array(Image.open(path).getdata())
     return normalize_image(image)
 
-df = pd.read_csv("omniglot_dataset.csv")
+df = pd.read_csv("training_set1.csv")
 X = []
 y = []
 
-def image_comparison(img1, img2):
+def image_comparison(count):
 	X_list = []
 	y_list = []
 
-	X_list.append([load_image(df.iloc[img1]["path"]), load_image(df.iloc[img2]["path"])])
-	
-	if(df.iloc[img1]["char_id"] == df.iloc[img2]["char_id"]):
-		y_list.append(1)
-	else:
-		y_list.append(0)
+	for i in range(0, count):
+		img1 = np.random.choice(range(0, len(df)), replace=True)
+		img2 = np.random.choice(range(0, len(df)), replace=True)
+
+		X_list.append([load_image(df.iloc[img1]["path"]), load_image(df.iloc[img2]["path"])])
+		
+		if(df.iloc[img1]["char_id"] == df.iloc[img2]["char_id"]):
+			y_list.append(1)
+		else:
+			y_list.append(0)
 
 	return X_list, y_list
 
-for i in range(0, 1000):
-	img1 = np.random.choice(range(0, len(df)), replace=True)
-	img2 = np.random.choice(range(0, len(df)), replace=True)
+X, y = image_comparison(1000)
 
-	X, Y = image_comparison(img1, img2)
+y = np.array(y)
+print(np.count_nonzero(y))
 
-my_tpot = TPOTClassifier(generations=3, verbosity=2, max_eval_time_mins=0.04, population_size=50)
-my_tpot.fit(np.array(X), np.array(y))
+#my_tpot = TPOTClassifier(generations=3, verbosity=2, max_eval_time_mins=0.04, population_size=50)
+#my_tpot.fit(np.array(X), np.array(y))
 
 #my_tpot.score(X_test, y_test)		
