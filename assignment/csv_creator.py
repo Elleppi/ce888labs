@@ -118,6 +118,7 @@ def path_parser(l1, l2, l3):
 	char_count = 0
 	char_full = 0
 	general_count = 0
+	char_id += 1
 
 	for i in range(0, len(l3)):
 		path = l3[i]
