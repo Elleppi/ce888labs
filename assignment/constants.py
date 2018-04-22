@@ -1,0 +1,10 @@
+training_alphabets = 30 #out of 50
+test_alphabets = 10 #out of 50
+general_samples = 20
+training_samples = 12 #out of 20
+test_samples = 4 #out of 20
+whole_dataset_name = "omniglot_dataset.csv"
+train_dataset_name = "training_set.csv"
+test_dataset_name = "test_set.csv"
+TPOT_exported_file_name = "tpot_pipeline.py"
+prediction_results_name = "prediction_results.csv"
